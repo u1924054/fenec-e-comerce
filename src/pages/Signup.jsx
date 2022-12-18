@@ -63,16 +63,16 @@ const Signup = () => {
       );
 
       setLoading(false);
-      toast.success("Account created");
+      toast.success("Compte creat correctament");
       navigate("/login");
     } catch (error) {
       setLoading(false);
-      toast.error("something went wrong");
+      toast.error("Error creant compte");
     }
   };
 
   return (
-    <Helmet title="Signup">
+    <Helmet title="Registra't">
       <section>
         <Container>
           <Row>

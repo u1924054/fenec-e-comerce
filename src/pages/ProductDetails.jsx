@@ -67,7 +67,7 @@ const ProductDetails = () => {
     };
 
     console.log(reviewObj);
-    toast.success("Review submitted");
+    toast.success("Opinio afegida");
   };
 
   const addToCart = () => {
@@ -80,7 +80,7 @@ const ProductDetails = () => {
       })
     );
 
-    toast.success("Product added successfully");
+    toast.success("Producte afegit correctament");
   };
 
   useEffect(() => {
@@ -248,7 +248,7 @@ const ProductDetails = () => {
             </Col>
 
             <Col lg="12" className="mt-5">
-              <h2 className="related__title">You might also like</h2>
+              <h2 className="related__title">També et pot agradar</h2>
             </Col>
 
             <ProductsList data={relatedProducts} />

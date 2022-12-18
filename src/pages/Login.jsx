@@ -29,7 +29,7 @@ const Login = () => {
 
       console.log(user);
       setLoading(false);
-      toast.success("Successfully logged in");
+      toast.success("Sessió iniciada correctament");
       navigate("/checkout");
     } catch (error) {
       setLoading(false);

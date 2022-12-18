@@ -34,7 +34,7 @@ const AddProducts = () => {
 
       uploadTask.on(
         () => {
-          toast.error("images not uploaded!");
+          toast.error("No s'ha carregat la imatge!");
         },
         () => {
           getDownloadURL(uploadTask.snapshot.ref).then(async downloadURL => {
@@ -51,11 +51,11 @@ const AddProducts = () => {
       );
 
       setLoading(false);
-      toast.success("product successfully added!");
+      toast.success("Producte afegit correctament!");
       navigate("/dashboard/all-products");
     } catch (err) {
       setLoading(false);
-      toast.error("product not added!");
+      toast.error("Producte no afegit!");
     }
   };
 

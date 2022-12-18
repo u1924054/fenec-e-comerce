@@ -5,9 +5,14 @@ import CommonSection from "../components/UI/CommonSection";
 import { updateProfile } from "firebase/auth";
 import "../styles/checkout.css";
 import { useSelector } from "react-redux";
-import { addDoc } from "firebase/firestore";
+import { db } from "../firebase.config";
+import useGetData from "../custom-hooks/useGetData";
+import { addDoc, doc, deleteDoc} from "firebase/firestore";
 import { updateCurrentUser } from "firebase/auth";
 import { cartActions } from "../redux/slices/cartSlice";
+import ProductCard from "../components/UI/ProductCard";
+import { toast } from "react-toastify";
+import { Link, useNavigate } from "react-router-dom";
 
 const Checkout = () => {
   const totalQty = useSelector(state => state.cart.totalQuantity);
@@ -72,7 +77,7 @@ const Checkout = () => {
                   Cost total: <span>{totalAmount}€</span>
                 </h4>
                 <button className="buy__btn aut__btn w-100" >
-                  Realitzar comanda
+                  <Link to="/shop">Realitzar compra</Link>
                 </button>
               </div>
             </Col>

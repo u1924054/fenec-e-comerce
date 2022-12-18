@@ -11,7 +11,7 @@ const Users = () => {
 
   const deleteUser = async id => {
     await deleteDoc(doc(db, "users", id));
-    toast.success("user deleted!");
+    toast.success("Usuari eliminat!");
   };
 
   return (

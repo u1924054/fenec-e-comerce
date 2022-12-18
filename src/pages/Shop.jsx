@@ -6,17 +6,15 @@ import { Container, Row, Col } from "reactstrap";
 
 import "../styles/shop.css";
 
-//import products from "../assets/data/products";
 import ProductsList from "../components/UI/ProductsList";
 
 const Shop = () => {
 
-  //const { data: productsData, setProductsData } = useGetData("products");
   const { data: products } = useGetData("products");
-  const[productsData,setProductsData] = useState(products);
-
-
-
+  const[productsData, setProductsData] = useState(products);
+  const[productsState, setProductsState] = useState("no filtered");
+  
+ 
   const handleFilter = e => {
     const filterValue = e.target.value;
     if (filterValue === "samarreta") {
@@ -25,6 +23,7 @@ const Shop = () => {
       ); 
 
       setProductsData(filteredProducts);
+      setProductsState("filtered");
     }
 
     else if (filterValue === "pantalo") {
@@ -33,6 +32,7 @@ const Shop = () => {
       );
 
       setProductsData(filteredProducts);
+      setProductsState("filtered");
     }
 
     else if (filterValue === "jaqueta") {
@@ -41,6 +41,7 @@ const Shop = () => {
       );
 
       setProductsData(filteredProducts);
+      setProductsState("filtered");
     }
 
     else if (filterValue === "sabata") {
@@ -49,6 +50,7 @@ const Shop = () => {
       );
 
       setProductsData(filteredProducts);
+      setProductsState("filtered");
     }
 
     else if (filterValue === "complement") {
@@ -57,11 +59,13 @@ const Shop = () => {
       );
 
       setProductsData(filteredProducts);
+      setProductsState("filtered");
     }
-    
-    else setProductsData(products);
-    
 
+    else{ 
+      setProductsData(products);
+      setProductsState("filtered");
+    }
   };
 
   const handleSearch = e => {
@@ -74,10 +78,10 @@ const Shop = () => {
     setProductsData(searchedProducts);
   };
 
+
   return (
     <Helmet title="Shop">
       <CommonSection title="Productes" />
-
       <section>
         <Container>
           <Row>
@@ -121,11 +125,17 @@ const Shop = () => {
       <section className="pt-0">
         <Container>
           <Row>
-            {products.length === 0 ? (
-              <h1 className="text-center fs-4">No hi ha productes</h1>
+            
+           {productsState === "no filtered" ? (
+              <ProductsList data={products} />
             ) : (
-              <ProductsList data={productsData} />
+               productsData.lenght === 0 ? (
+                <h1 className="text-center fs-4">No hi ha productes</h1>
+              ) : (
+                  <ProductsList data={productsData} />
+              )
             )}
+            
           </Row>
         </Container>
       </section>

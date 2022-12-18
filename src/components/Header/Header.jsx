@@ -52,7 +52,7 @@ const Header = () => {
   const logout = () => {
     signOut(auth)
       .then(() => {
-        toast.success("Logged out");
+        toast.success("Sessió tancada");
         navigate("/shop");
       })
       .catch(err => {
@@ -129,14 +129,17 @@ const Header = () => {
                   {currentUser ? (
                     <div className="d-flex flex-column ">
                       <span onClick={logout}>Tancar sessió</span>
-                      <span>
-                        <Link to="/dashboard">Dashboard</Link>
-                      </span>
+                        {currentUser.displayName === "Admin" ? (
+                            <Link to="/dashboard">Administració</Link>
+                        ):(
+                          <p></p>
+                        )}
                     </div>
                   ) : (
                     <div className=" d-flex align-items-center justify-content-center flex-column">
                       <Link to="/signup">Enregistra't</Link>
                       <Link to="/login">Iniciar sessió</Link>
+                      <Link to="/dashboard">Administració</Link>
                     </div>
                   )}
                 </div>
