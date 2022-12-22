@@ -7,6 +7,6 @@ Botiga de e-comerce de roba infantil
 
 https://docs.google.com/presentation/d/1ftMEkxrvkxZsb2mgqnmRPm-tT-M8WOLsp0xodl2sRTM/edit?usp=sharing
 
-###Autors
+##Autors
 
 Ikram Ahdadouche i Dalila Jbilou
