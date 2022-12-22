@@ -10,3 +10,7 @@ https://docs.google.com/presentation/d/1ftMEkxrvkxZsb2mgqnmRPm-tT-M8WOLsp0xodl2s
 ### Autores
 
 Ikram Ahdadouche i Dalila Jbilou
+
+### Assignatura
+
+Sistema de Gestió de Bases de Dades : Enginyeria del Software
